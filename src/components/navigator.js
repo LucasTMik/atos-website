@@ -20,9 +20,11 @@ export default class Navigator extends Component {
                 </div>
                 <style jsx>{`
                     .navContainer {
-                        width: 100%:
+                        width: 100%;
                         height: 200px;
                         margin: 20px;
+                        position: fixed;
+                        z-index: 1000;
                     }
                     .nav {
                         display: flex;

@@ -2,212 +2,62 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../fonts.css';
-import home_01 from '../static/img/home/home_01.jpg';
-import home_02 from '../static/img/home/home_02.jpg';
-import series_01 from '../static/img/home/series_01.jpg';
+import Banner from '../components/banner';
 
-import Navigator from '../components/navigator';
-// import Footer from '../components/footer';
+
 
 export default class Home extends Component {
+
     render() {
         return (
-            <div className={"page"}>
-                <div className={"nav"}>
-                    <Navigator />
-                </div>
-                <div className={"container"}>
-                    <div className={"headerContainer"}>
-                        <h1>PRESBITERIANA <span className={"atosText"} >ATOS</span></h1>
+            <div className="homeContainer">
+                <div className="bannerContainer">
+                    <div className="bg"></div>
+                    <div className="centerDiv textContainer">
+                        <h1>IGREJA PRESBITERIANA <span>ATOS</span></h1>
                     </div>
                 </div>
-                <div className={"seriesContainer"}>
-                    <h3>NOVA SÉRIE!</h3>
-                    <h2>RE JESUS</h2>
-                    <Link className={"btn"} to={"/"} >ONDE</Link>
-                </div>
-                <div className={"aboutContainer"}>
-                    <h3><span className={"atosText"}>NOVO</span> AQUI? <span className={"atosText"}>SAIBA</span> MAIS:</h3>
-                    <div className={"aboutActions"}>
-                        <Link className={"btn"} to={"/"} >NOSSO PASTOR</Link>
-                        <Link className={"btn"} to={"/"} >NOSSOS CONSELHO</Link>
-                        <Link className={"btn"} to={"/"} >NOSSOS VALORES</Link>
+                <div className="contentContainer one">
+                    <h3> Hello </h3>
+                    <div className="content">
+                        <button className="btn">Hello</button>
                     </div>
                 </div>
-                <div className={"soundContainer"}>
-                    <h3><span className={"atosText"}>UMA IGREJA</span> // DUAS MANEIRAS</h3>
-                    <div className={"locations"}>
-                        <div>
-                            <button className={"btn"} >São Gonçalo</button>
-                            <div>
-                                <p>Domingos</p>
-                                <p>10:00 horas | 18:00 horas</p>
-                            </div>
-                        </div>
-                        <div>
-                            <button className={"btn"}>SoundClound</button>
-                            <div>
-                                <p>Sempre</p>
-                                <p>Venha nos escutar</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className={"eventsContainer"}>
-                    <h3>VEJA O QUE ESTÁ POR <span className={"atosText"}>VIR</span>!</h3>
-                    <Link className={"btn"} to={"/"} >EVENTOS</Link>
-                </div>
-                {/* <Footer /> */}
                 <style jsx>{`
-                    body {
-                        margin: 0;
+                    .centerDiv{position: absolute;top:50%;left: 50%; transform: translate(-50%,-50%)}
+
+                    .homeContainer .homeContainer {font-family: 'Gotham Light';}
+                    .homeContainer .bannerContainer{width: 100vw; height: 100vh; background: gray;position: relative;}
+                    .homeContainer .bannerContainer .bg {background: url(https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/08/16/104656646-Melbourne.1910x1000.jpg) center;background-size: cover; width: 100vw;height:100vh;filter: contrast(50%) blur(20px);}
+                    .homeContainer .textContainer {}
+                    .homeContainer .bannerContainer h1 {color: white;letter-spacing:2px;font-size: 35px; font-weight: bold; }
+                    .homeContainer .bannerContainer h1 span {font-family: 'Gotham Bold';}
+
+                    .contentContainer {
+                        position: relative;
+                        height: 50vh;
                         width: 100%;
                     }
-
-                    .page {
-                        font-family: 'Gotham Light';
-                        letter-spacing: 2px;
-                        color: white;
-                    }
-
-                    h1,h2,h3,h4,p {
-                        padding: 0;
-                        margin: 0;
-                    }
-
-                    .container {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        height: 100vh;
-                        background: url(${home_01});
-                        background-size: cover;
-                    }
-
-                    .aboutContainer {
-                        height: 50vh;
-                        background: rgb(60,60,65);
-                        color: white;
-                        letter-spacing: 1px;
-                        font-size: 1.3rem;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                    }
+                    .contentContainer.one {background: url(http://www.intheblack.com/~/media/intheblack/allimages/magazine-2017/02-february/feature-cities-feature.jpg);background-size: cover;}
+                    .homeContainer .contentContainer h3{font-size: 25px; padding: 20px;color: white;letter-spacing: 2px;font-weight: bold;}
+                    .homeContainer .contentContainer .content {position: absolute; top:60%;left:50%;transform:translate(-50%,-60%)}
                     
-                    .aboutActions {
-                        margin: 70px 0px;
-                    }
-
-                    .headerContainer {
-                        font-size: 2rem;
-                    }
-                    
-                    .soundContainer {
-                        background: url(${home_02});
-                        background-size: cover;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        height: 50vh;
-                        font-size: 1.5rem;
-                    }
-
-                    .soundContainer .locations {
-                        display: flex;
-                    }
-
-                    .locations div {
-                        margin: 10px 50px;
-                        font-size: 1rem;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                    }
-
-                    .locations p {
-                        padding: 5px;
-                        font-family: 'Gotham Bold';
-                    }
-                    
-                    .eventsContainer {
-                        background: rgb(60,60,65);
-                        height: 50vh;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        color: white;
-                        font-size: 1.3rem;
-                    }
-
-                    .eventsContainer h3{
-                        padding: 0;
-                        margin: 0;
-                    }
-                    
-                    
-                    .seriesContainer {
-                        width: 100%;
-                        height: 60vh;
-                        background: url(${series_01});
-                        background-size: cover;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        color: white;
-                    }
-                    
-                    .seriesContainer h2 {
-                        font-size: 4rem;
-                        margin: 50px;
-                    }
-                    
-                    
-                    .atosText {
-                        font-family: 'Gotham Bold';
-                    }
-                `}</style>
-                <style jsx global>{`
-                    .nav {
-                        position: absolute;
-                        top: 2%;
-                        left: 0;
-                        width: 100%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-
-                    .nav .btn {
-                        color: white;
-                        border: none;
-                    }
-
-                    
-                    .btn, button {
+                    .btn {
+                        background: transparent;
                         text-decoration: none;
+                        padding: 15px 20px;
                         color: white;
-                        border: 2px white solid;
-                        font-size: 1rem;
-                        font-family: 'Gotham Bold';
-                        padding: 20px 30px;
-                        margin: 20px;
-                        transition: all .2s;
-                        background: none;
+                        font-family: 'Gotham Light';
+                        font-weight: bold;
+                        letter-spacing: 3px;
+                        transition: all .2s; 
+						width: 300px;
+						border: 2px solid white;
+						-webkit-border-radius: 5px;
+						-moz-border-radius: 5px;
+						border-radius: 5px;
+						margin: 20px 0px;
                     }
-
-                    .btn:hover, button:hover {
-                        color: rgb(60,60,65);
-                        background: white;
-                    }
-
-                    
                 `}</style>
             </div>
         );
